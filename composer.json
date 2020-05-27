@@ -1,5 +1,5 @@
 {
-    "name": "asgrim/ofxparser",
+    "name": "sysinagro/ofxparser",
     "description": "Simple OFX file parser",
     "keywords": ["ofx", "open financial exchange", "finance", "parser"],
     "license": "MIT",
