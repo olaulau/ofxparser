@@ -28,11 +28,6 @@ class Investment extends Ofx
         if (isset($xml->INVSTMTMSGSRSV1)) {
             $this->bankAccounts = $this->buildAccounts($xml);
         }
-
-        // Set a helper if only one bank account
-        if (count($this->bankAccounts) === 1) {
-            $this->bankAccount = $this->bankAccounts[0];
-        }
     }
 
     /**

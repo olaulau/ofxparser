@@ -4,7 +4,7 @@ namespace OfxParser\Entities;
 
 class Transaction extends AbstractEntity
 {
-    private static $types = [
+    const TYPES = [
         'CREDIT' => 'Generic credit',
         'DEBIT' => 'Generic debit',
         'INT' => 'Interest earned or paid',
@@ -80,6 +80,6 @@ class Transaction extends AbstractEntity
     {
         // Cast SimpleXMLObject to string
         $type = (string)$this->type;
-        return array_key_exists($type, self::$types) ? self::$types[$type] : '';
+        return array_key_exists($type, self::TYPES) ? self::TYPES[$type] : '';
     }
 }

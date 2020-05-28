@@ -7,7 +7,7 @@ class Status extends AbstractEntity
     /**
      * @var string[]
      */
-    private static $codes = [
+    const CODES = [
         '0'       => 'Success',
         '2000'    => 'General error',
         '15000'   => 'Must change USERPASS',
@@ -40,6 +40,6 @@ class Status extends AbstractEntity
     {
         // Cast code to string from SimpleXMLObject
         $code = (string)$this->code;
-        return array_key_exists($code, self::$codes) ? self::$codes[$code] : '';
+        return array_key_exists($code, self::CODES) ? self::CODES[$code] : '';
     }
 }

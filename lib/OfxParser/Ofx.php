@@ -49,13 +49,6 @@ class Ofx
     public $bankAccounts = [];
 
     /**
-     * Only populated if there is only one bank account
-     * @var BankAccount|null
-     * @deprecated This will be removed in future versions
-     */
-    public $bankAccount;
-
-    /**
      * @param SimpleXMLElement $xml
      * @throws \Exception
      */
@@ -69,22 +62,6 @@ class Ofx
         } elseif (isset($xml->CREDITCARDMSGSRSV1)) {
             $this->bankAccounts = $this->buildCreditAccounts($xml);
         }
-
-        // Set a helper if only one bank account
-        if (count($this->bankAccounts) === 1) {
-            $this->bankAccount = $this->bankAccounts[0];
-        }
-    }
-
-    /**
-     * Get the transactions that have been processed
-     *
-     * @return array
-     * @deprecated This will be removed in future versions
-     */
-    public function getTransactions()
-    {
-        return $this->bankAccount->statement->transactions;
     }
 
     /**
