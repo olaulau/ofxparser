@@ -82,6 +82,7 @@ class Utils
      * 0.000,00 and -0.000,00
      * 0,000.00 and -0,000.00
      * 000.00 and 000.00
+     * 000
      *
      * @param  string $amountString
      * @return float
@@ -89,7 +90,7 @@ class Utils
     public static function createAmountFromStr($amountString)
     {
         // Decimal mark style (UK/US): 000.00 or 0,000.00
-        if (preg_match('/^(-|\+)?([\d,]+)(\.?)([\d]{2})$/', $amountString) === 1) {
+        if (preg_match('/^(-|\+)?([\d,]+)(\.)([\d]{2})$/', $amountString) === 1) {
             return (float)preg_replace(
                 ['/([,]+)/', '/\.?([\d]{2})$/'],
                 ['', '.$1'],
@@ -98,7 +99,7 @@ class Utils
         }
 
         // European style: 000,00 or 0.000,00
-        if (preg_match('/^(-|\+)?([\d\.]+,?[\d]{2})$/', $amountString) === 1) {
+        if (preg_match('/^(-|\+)?([\d\.]+,[\d]{2})$/', $amountString) === 1) {
             return (float)preg_replace(
                 ['/([\.]+)/', '/,?([\d]{2})$/'],
                 ['', '.$1'],

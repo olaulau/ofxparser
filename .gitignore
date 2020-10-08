@@ -1,4 +1,9 @@
-.idea
 .DS_Store
+.idea
+.buildpath
+.project
+.settings/
+
 vendor
 composer.lock
+
