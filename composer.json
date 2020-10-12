@@ -1,5 +1,5 @@
 {
-    "name": "sysinagro/ofxparser",
+    "name": "olaulau/ofxparser",
     "description": "Simple OFX file parser",
     "keywords": ["ofx", "open financial exchange", "finance", "parser"],
     "license": "MIT",
